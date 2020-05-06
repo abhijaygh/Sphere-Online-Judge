@@ -1,0 +1,49 @@
+#include<iostream>
+ using namespace std;
+ int main()
+ {
+    int t, count, i, j, k, n=0;
+    char x;
+    cin>> t;
+ 
+    while (1)
+    {
+        char* A = new char[400];
+        char* B = new char[400];
+        char* C = new char[400];
+        i = -1; j = -1; count = 0;
+        cin >> x;
+        if ( x == '(') count++;
+        while (count > 0)
+        {
+            cin >> x;
+            if (x == '(') count++; //case- open bracket
+            else {
+                if ((x == '+') || (x == '-') || (x == '*') || (x == '/') || (x == '^') || (x == '%')) //case- operand
+                {
+                    B[count-1] = x;
+                }
+                else
+                {
+                    if (x == ')') //case- close bracket
+                    {
+                        cout << B[count - 1];
+                        count--;
+                    }
+                    else
+                    {
+                        if (x == '\n') break; //case- newline character
+                        else cout << x;  //case- alphabet
+                    }
+                }
+            }
+        }
+        cout << '\n';
+        delete[] A;
+        delete[] B;
+        delete[] C;
+        n++;
+        if (n == t) break;
+    }
+    return 0;
+} 
