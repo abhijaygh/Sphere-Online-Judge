@@ -1,0 +1,41 @@
+#include <iostream>
+#include <stdio.h>
+#include <string.h>
+using namespace std;
+ 
+int main() {
+	// your code goes here
+	int n;
+	scanf("%d",&n);//no. of columns
+	while(n)
+	{
+		char a[400];
+		scanf("%s",&a);
+		int l=strlen(a)/n;// no. of rows
+		char b[l][n];
+		int k=0;
+		for(int i=0;i<l;i++)
+		{
+			if(i%2)
+			{
+				for(int j=n-1;j>=0;j--)
+				b[i][j]=a[k++];
+			}
+			else
+			{
+				for(int j=0;j<n;j++)
+				b[i][j]=a[k++];
+			}
+		}
+		for(int i=0;i<n;i++)
+		{
+			for(int j=0;j<l;j++)
+			{
+				printf("%c",b[j][i]);
+			}
+		}
+		printf("\n");
+		scanf("%d",&n);
+	}
+	return 0;
+}
