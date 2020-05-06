@@ -1,0 +1,34 @@
+clude <iostream>
+#include <cmath>
+using namespace std;
+ 
+int main() 
+{
+	int i,j,b,c,d,n;
+	double sum=0,two=0,three=0,four=0;
+	int ans=0;
+	char ch;
+	cin>>n;
+	for(i=1;i<=n;i++)
+	{
+		cin>>b>>ch>>c;
+		if(c==4 && b==1)
+			four++;
+		if(c==4 && b==3)
+			three++;
+		if(c==2)
+			two++;
+	
+	}
+	ans=ans+two/2;
+	two=two-ans*2;
+	b=min(three,four);
+	ans=ans+b;
+	three=three-b;
+	four=four-b;
+	ans=ans+three;
+	ans=ans+(ceil(two*0.5+four*0.25));
+	cout<<ans+1<<endl;
+	// your code goes here
+	return 0;
+} 
