@@ -1,0 +1,33 @@
+clude <iostream>
+using namespace std;
+ 
+int main() {
+	// your code goes here
+	int t;
+	scanf("%d",&t);
+	while(t>0)
+	{
+	    int n1,n2;
+	    scanf("%d",&n1);
+	    long long int a[n1];
+	    for(int i=0;i<n1;i++)
+	    scanf("%lld",&a[i]);
+	    scanf("%d",&n2);
+	    long long int b[n2];
+	    for(int i=0;i<n2;i++)
+	    scanf("%lld",&b[i]);
+	    long long int min=abs(a[0]-b[0]);
+	    for(int i=0;i<n1;i++)
+	    {
+	        for(int j=0;j<n2;j++)
+	        {
+	            if(min>abs(a[i]-b[j]))
+	            min=abs(a[i]-b[j]);
+	        }
+	    }
+	    printf("%lld\n",min);
+	    t--;
+	}
+	return 0;
+}
+ 
