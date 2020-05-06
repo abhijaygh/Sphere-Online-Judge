@@ -1,0 +1,26 @@
+#include <iostream>
+#include<boost/multiprecision/cpp_int.hpp>
+using namespace std;
+using boost::multiprecision::cpp_int;
+int main() {
+	// your code goes here
+	cpp_int t;
+	cin>>t;
+	while(t>0)
+	{
+	   cpp_int n,i,su=0,s=0;
+	    cin>>n;
+	    for( i=0;i<n;i++)
+	    {
+	        cin>>s;
+	        su=(su +s)%n;
+	    }
+	    if(su==0)
+	    printf("YES\n");
+	    else
+	    printf("NO\n");
+	    t--;
+	}
+	
+	return 0;
+}
