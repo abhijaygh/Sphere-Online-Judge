@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+int  main()
+{
+	int n;
+	do
+	{
+		scanf("%d",&n);
+		int i=0;
+		long int s=0;
+		if(n!=0)
+		{
+			while(n>i)
+			{
+				s=s+((n-i)*(n-i));
+				i++;
+			}
+			printf("%li\n",s);
+		}
+	}while(n!=0);
+	return 0;
+} 
