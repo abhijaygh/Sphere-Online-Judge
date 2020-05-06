@@ -1,0 +1,38 @@
+#include <iostream>
+#include<cmath>
+using namespace std;
+void prime(long long int g)
+{
+	int a=0;
+	long long int i;
+	if(g==1)
+	return;
+	if(g==2)
+	printf("%lld\n",g);
+	for(i=2;i<=sqrt(g)+1;i++)
+	{
+		if(g%i==0)
+		{a=1;break;}
+	}
+	if(a==0)
+	printf("%lld\n",g);
+	a=0;
+}
+int main() {
+	// your code goes here
+	int t;
+	scanf("%d",&t);
+	while(t>0)
+	{
+		long long int m,n;
+		scanf("%lld%lld",&m,&n);
+		while(m<=n)
+		{
+			prime(m);
+			m++;
+		}
+		printf("\n");
+		t--;
+	}
+	return 0;
+} 
